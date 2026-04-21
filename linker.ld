@@ -74,7 +74,7 @@ MEMORY
 }
 
 /* Dirección inicial de la pila: al final de la RAM */
-__reset_stack_pointer = ORIGIN(RAM) + LENGTH(RAM);
+__estack = ORIGIN(RAM) + LENGTH(RAM);
 
 SECTIONS
 {
