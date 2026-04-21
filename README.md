@@ -1,4 +1,4 @@
-# 🧵 bluepill-baremetal
+# 🧵 bluepill-baremetal :)
 
 🎯 **Proyecto minimalista para programar la Blue Pill (STM32F103C8T6) en bare-metal usando WSL2.**  
 Sin HAL, sin magia: solo registros, C puro y un Makefile simple. Ideal para aprender cómo funciona todo desde adentro 🔍⚙️
