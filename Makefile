@@ -47,12 +47,12 @@ clean:
 # Flasheo con OpenOCD
 .PHONY: flash
 flash: $(BIN_DIR)/$(TARGET)
-	openocd -f interface/stlink.cfg -f target/stm32f1x.cfg -c "program $^ verify reset exit"
+	openocd -f interface/stlink.cfg -c "set CPUTAPID 0" -f target/stm32f1x.cfg -c "program $^ verify reset exit"
 
 # Abrir OpenOCD
 .PHONY: openocd
 openocd:
-	openocd -f interface/stlink.cfg -f target/stm32f1x.cfg
+	openocd -f interface/stlink.cfg -c "set CPUTAPID 0" -f target/stm32f1x.cfg
 
 # Conexión con GDB
 .PHONY: gdb

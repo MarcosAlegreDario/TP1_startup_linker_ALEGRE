@@ -1,10 +1,20 @@
 #include <stdint.h>
 
+
+
 // Definición de registros y direcciones de periféricos
 #define RCC_APB2ENR     (*((volatile uint32_t*)0x40021018U))        // Registro de habilitación de clocks (p. 112)
 #define GPIOC_BASE      (0x40011000U)                               // Dirección base del GPIOC
 #define GPIOC_CRH       (*((volatile uint32_t*)(GPIOC_BASE + 0x4U)))// Configuración de pines 8..15 (p. 172)
 #define GPIOC_ODR       (*((volatile uint32_t*)(GPIOC_BASE + 0xCU)))// Registro de salida (p. 173)
+
+//Creamos una variable de prueba con un valor asignado
+
+int prueba_1=10;
+
+//Creamos una variable sin un valor inicializado
+
+int prueba_2;
 
 int main()
 {
