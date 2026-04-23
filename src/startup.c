@@ -127,11 +127,17 @@ void Default_Handler(void) {
 
 // Reset Handler: punto de entrada tras un reset
 void Reset_Handler(void) {
+    
     // Copiar la sección .data de la memoria flash a la RAM
+    
+    /* FALLA B: No se realiza la copia de datos inicializados
+    
     uint32_t *src = &_load_address;
     for (uint32_t *dest = &_sdata; dest < &_edata;) {
         *dest++ = *src++;
     }
+    */
+
 
     // Inicializa la sección .bss con ceros (RAM no inicializada)
     for (uint32_t *dest = &_sbss; dest < &_ebss;) {
