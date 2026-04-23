@@ -78,7 +78,7 @@ __reset_stack_pointer = ORIGIN(RAM) + LENGTH(RAM);
 
 SECTIONS
 {
-    /* 1 Sección de vectores de interrupciones (va en FLASH al principio) */
+    /* Sección de vectores de interrupciones (va en FLASH al principio) */
     .vectors : {
         *(.isr_vector);  /* Contiene el puntero de pila inicial y el Reset_Handler */
     } > FLASH
