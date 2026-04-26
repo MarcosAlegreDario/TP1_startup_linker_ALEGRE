@@ -16,6 +16,9 @@ int prueba_1=10;
 
 int prueba_2;
 
+//Prototipo de función para encender un led
+void encenderLed(void);
+
 int main()
 {
   // Habilitar el clock del periférico GPIOC
@@ -31,8 +34,17 @@ int main()
                                    // CNF13  = 00 (push-pull)
 
   while (1)
-  {
-    // Apagar LED (PC13 = 1, LED conectado a masa en muchas Blue Pill)
+  
+  encenderLed();
+  
+
+  return 0;
+}
+
+void encenderLed(void){
+{
+    
+  // Apagar LED (PC13 = 1, LED conectado a masa en muchas Blue Pill)
     GPIOC_ODR |= (1U << 13);
 
     // Delay por software
@@ -45,5 +57,5 @@ int main()
     for (int i = 0; i < 500000; i++);
   }
 
-  return 0;
+
 }
