@@ -10,6 +10,10 @@
 
 //Creamos una variable de prueba con un valor asignado
 
+/* Creo una función para probar si el valor luego termina guardado en otro lugar */
+
+void funcion_prueba();
+
 int prueba_1=10;
 
 //Creamos una variable sin un valor inicializado
@@ -30,6 +34,11 @@ int main()
   GPIOC_CRH |=  (0x2 << 20);       // MODE13 = 10 (output, 50 MHz)
                                    // CNF13  = 00 (push-pull)
 
+/* Creo una función para probar si el valor luego termina guardado en otro lugar */
+
+funcion_prueba();
+
+
   while (1)
   {
     // Apagar LED (PC13 = 1, LED conectado a masa en muchas Blue Pill)
@@ -46,4 +55,10 @@ int main()
   }
 
   return 0;
+}
+
+
+void funcion_prueba(void) {
+    int variable_local = 0x50; // Esto se guarda en el Stack
+    variable_local++; // Evitamos que el compilador optimice y borre la variable
 }
