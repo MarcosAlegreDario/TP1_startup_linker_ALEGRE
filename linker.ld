@@ -78,7 +78,7 @@ MEMORY
 /*Fuerzo el error comentando esta línea y luego agrego un valor muy pequeño */
 /*__reset_stack_pointer = ORIGIN(RAM) + LENGTH(RAM);*/
 
-__reset_stack_pointer = 0x2000009;
+__reset_stack_pointer = 0x2000085;
 
 
 
