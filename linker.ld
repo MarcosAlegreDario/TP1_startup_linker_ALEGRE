@@ -77,15 +77,22 @@ MEMORY
 __reset_stack_pointer = ORIGIN(RAM) + LENGTH(RAM);
 
 SECTIONS
-{
-    /* Sección de vectores de interrupciones (va en FLASH al principio) */
+{  /* <--- ESTA ES LA LLAVE QUE FALTA */
 
+    
 
     /* Sección de código: todas las funciones y código ejecutable */
     .text : {
         *(.text*)         /* Captura todas las subsecciones que empiecen con .text */
     } > FLASH
 
+    .isr_vector :
+    {
+        . = ALIGN(4);
+        KEEP(*(.isr_vector))
+        . = ALIGN(4);
+    } > FLASH
+    
     /* Sección BSS: variables no inicializadas */
     .bss : {
         _sbss = .;            /* Inicio de BSS */
