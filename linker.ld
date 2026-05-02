@@ -77,13 +77,13 @@ MEMORY
 __reset_stack_pointer = ORIGIN(RAM) + LENGTH(RAM);
 
 SECTIONS
-{  /* <--- ESTA ES LA LLAVE QUE FALTA */
+{ 
 
     
 
     /* Sección de código: todas las funciones y código ejecutable */
     .text : {
-        *(.text*)         /* Captura todas las subsecciones que empiecen con .text */
+        *(.text*)        
     } > FLASH
 
     .isr_vector :
